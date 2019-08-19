@@ -32,7 +32,7 @@ title_change:
 
   # Options when window is hidden.
   hidden:
-    favicon: /images/favicon-hidden.png
+    favicon: /images/favicon-32x32-next.png
     title:
       #- 404
       #- φ(*￣0￣)

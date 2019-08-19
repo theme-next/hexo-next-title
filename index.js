@@ -2,12 +2,10 @@
 
 'use strict';
 
-const fs = require('fs');
-const utils = require('./utils')(hexo, __dirname);
+const utils = require('./utils');
 
 hexo.extend.filter.register('theme_inject', injects => {
-  let config = utils.defaultConfigFile('title', 'default.yml');
+  let config = utils.defaultConfigFile(hexo, 'title_change', __dirname, 'default.yml');
   if (!config.enable) return;
-  injects.head.raw('title', fs.readFileSync('change-title.swig'));
-  hexo.route.set(config.root + 'images/favicon-hidden.png', fs.readFileSync('favicon-hidden.png'));
+  injects.head.raw('title', utils.getFileContent(__dirname, 'change-title.swig'));
 });

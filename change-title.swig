@@ -1,40 +1,40 @@
 <script>
-  (d => {
+  window.addEventListener('DOMContentLoaded', () => {
     'use strict';
-    {% if not theme.title_change.onmobile %}
+    {% if not config.title_change.onmobile %}
       if (NexT.utils.hasMobileUA()) return;
     {% endif %}
-    let time, hidden, visible, title = d.title;
-    let favicon = d.querySelector('link[rel="icon"]');
-    {% if theme.title_change.random %}
-      hidden = {{ theme.title_change.hidden.title | json_encode }};
-      visible = {{ theme.title_change.visible.title | json_encode }};
+    let time, hidden, visible, title = document.title;
+    let favicon = document.querySelector('link[rel="icon"]');
+    {% if config.title_change.random %}
+      hidden = {{ config.title_change.hidden.title | json_encode }};
+      visible = {{ config.title_change.visible.title | json_encode }};
     {% else %}
-      hidden = '{{ theme.title_change.hidden.title }}';
-      visible = '{{ theme.title_change.visible.title }}';
+      hidden = '{{ config.title_change.hidden.title }}';
+      visible = '{{ config.title_change.visible.title }}';
     {% endif %}
     let random = t => t[Math.floor(Math.random() * t.length)];
     const change = () => {
-      if (d.hidden) {
-        favicon.setAttribute('href', '{{ theme.title_change.hidden.favicon }}');
-        {% if theme.title_change.random %}
-          d.title = random(hidden);
+      if (document.hidden) {
+        favicon.setAttribute('href', '{{ config.title_change.hidden.favicon }}');
+        {% if config.title_change.random %}
+          document.title = random(hidden);
         {% else %}
-          d.title = hidden;
+          document.title = hidden;
         {% endif %}
         clearTimeout(time);
       } else {
-        favicon.setAttribute('href', '{{ theme.title_change.visible.favicon }}');
-        {% if theme.title_change.random %}
-          d.title = random(visible);
+        favicon.setAttribute('href', '{{ config.title_change.visible.favicon }}');
+        {% if config.title_change.random %}
+          document.title = random(visible);
         {% else %}
-          d.title = visible;
+          document.title = visible;
         {% endif %}
         time = setTimeout(() => {
-          d.title = title;
-        }, {{ theme.title_change.timeout }});
+          document.title = title;
+        }, {{ config.title_change.timeout }});
       }
     }
-    d.addEventListener('visibilitychange', change, false);
-  })(document);
+    document.addEventListener('visibilitychange', change, false);
+  });
 </script>
