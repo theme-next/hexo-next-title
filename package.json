@@ -1,0 +1,29 @@
+{
+  "name": "hexo-next-title",
+  "version": "0.1.0",
+  "description": "Change to a different title when window is no longer in focus.",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theme-next/hexo-next-title.git"
+  },
+  "keywords": [
+    "hexo",
+    "theme-next",
+    "plugin",
+    "title"
+  ],
+  "author": "NexT team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theme-next/hexo-next-title/issues"
+  },
+  "homepage": "https://github.com/theme-next/hexo-next-title#readme",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-theme-next": "^1.1.1"
+  }
+}
