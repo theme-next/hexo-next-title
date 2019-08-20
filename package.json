@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/theme-next/hexo-next-title#readme",
   "devDependencies": {
-    "eslint": "6.2.0",
+    "eslint": "6.2.1",
     "eslint-config-theme-next": "1.1.2"
   }
 }
