@@ -7,7 +7,7 @@ Change to a different title when window is no longer in focus.
 
 ## Install
 ```bash
-npm install --save theme-next/hexo-next-title#last-release
+npm install theme-next/hexo-next-title
 ```
 
 ## Configure
