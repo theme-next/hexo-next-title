@@ -7,8 +7,8 @@
     let time, hidden, visible, title = document.title;
     let favicon = document.querySelector('link[rel="icon"]');
     {% if config.title_change.random %}
-      hidden = {{ config.title_change.hidden.title | json_encode }};
-      visible = {{ config.title_change.visible.title | json_encode }};
+      hidden = {{ config.title_change.hidden.title | json }};
+      visible = {{ config.title_change.visible.title | json }};
     {% else %}
       hidden = '{{ config.title_change.hidden.title }}';
       visible = '{{ config.title_change.visible.title }}';
