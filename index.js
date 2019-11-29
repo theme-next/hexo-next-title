@@ -2,10 +2,11 @@
 
 'use strict';
 
-const utils = require('./utils');
+const Util = require('next-util');
+const utils = new Util(hexo, __dirname);
 
 hexo.extend.filter.register('theme_inject', injects => {
-  let config = utils.defaultConfigFile(hexo, 'title_change', __dirname, 'default.yml');
+  let config = utils.defaultConfigFile('title_change', 'default.yml');
   if (!config.enable) return;
-  injects.head.raw('title', utils.getFileContent(__dirname, 'change-title.swig'));
+  injects.head.raw('title', utils.getFileContent('change-title.swig'));
 });
