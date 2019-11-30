@@ -26,7 +26,7 @@
     "next-util": "github:theme-next/next-util"
   },
   "devDependencies": {
-    "eslint": "6.7.1",
+    "eslint": "6.7.2",
     "eslint-config-theme-next": "1.1.3"
   }
 }
